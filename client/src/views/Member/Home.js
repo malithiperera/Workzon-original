@@ -8,6 +8,7 @@ import App_todo from '../../App_todo';
 import RoutesRes from 'hooks/routeRes';
 import './styles/Home.css';
 import { useState, useEffect } from 'react';
+import { Typography } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -98,7 +99,7 @@ setButton(false)
                     </div>
                     <div className='summary-card'>
                         <div>
-                        <TotalIncomeDarkCard title={'Ongoing Projects'} count="3" icon={<DevicesOutlinedIcon fontSize="inherit" />} />
+                        <TotalIncomeDarkCard title={'Ongoing Projects'} count="2" icon={<DevicesOutlinedIcon fontSize="inherit" />} />
                         </div>
                         <div>
                         <TotalIncomeDarkCard title={'Pending Leaves'} count="2"  icon={<NoAccountsOutlinedIcon fontSize="inherit" />}/>
@@ -113,25 +114,19 @@ setButton(false)
 
                     <div className="online-container">
                         <div className='projectCard'>
-                        <h2>On Going Projects</h2> 
+                        <Typography variant="h3" component="h4" className="" style={{marginBottom:"20px",marginTop:"20px"}}>
+                              On Going Projects      
+                        </Typography>
                         <MemberProjectCard 
-                       title={'Skelton Mobile App'}
-                       date={'24.08.2022'}
-                       subtask={'Prototype Design'}
-                       days={'Today'}
-                       color={'#8bc34a'}
+                      
                        />
-                       <MemberProjectCard 
-                       title={'UCSC Bit Web App'}
-                       date={'04.09.2022'}
-                       subtask={'Admin Component design'}
-                       days={'10 days remaining'}
-                       color={'#ffc107'}
-                       />
+                    
                         </div>
                        
                      <div className='siteAnnouce'>
-                     <h2>Site Annoucments</h2> 
+                     <Typography variant="h3" component="h4" className="" style={{marginBottom:"20px",marginTop:"20px"}}>
+                              Site Annoucements     
+                        </Typography>
                         <SiteAnnoucements />
                      </div>
                         

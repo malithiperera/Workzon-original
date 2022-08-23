@@ -24,7 +24,14 @@ function generate(element) {
     }),
   );
 }
-
+const buttonDiv={
+  display:'flex',
+  alignItems:'center',
+  justifyContent:'flex-end'
+}
+const butDiv={
+  margin:'10px'
+}
 const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
@@ -33,6 +40,7 @@ export default function InteractiveList() {
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
 
+  
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
         <Grid item xs={12} md={6}>
@@ -95,10 +103,13 @@ export default function InteractiveList() {
                 </ListItem>
               
             </List>
-            <Grid>
-            <Button variant="contained">View</Button>
-            <Button variant="contained">View</Button>
-            </Grid>
+           <div style={buttonDiv}>
+            <div style={butDiv}> <Button variant="contained" color='success'>Submit</Button></div>
+            <div> <Button variant="contained">View</Button></div>
+         
+           </div>
+           
+        
           
           </Demo>
         </Grid>
