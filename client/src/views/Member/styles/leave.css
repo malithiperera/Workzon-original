@@ -87,3 +87,14 @@ margin-left: -9px;
     ::-webkit-scrollbar-thumb:hover {
     background: rgb(5, 151, 236); 
     }
+    .css-ypiqx9-MuiDialogContent-root{
+        width: 550px;
+    }
+    .css-3gbcgo-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input.MuiSelect-select{
+        border: solid 0.5px #bdbcbc;
+        border-radius: 10px;
+    }
+    .css-3gbcgo-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input.MuiSelect-select{
+        width: 400px;
+        background-color: #fafafa;
+    }

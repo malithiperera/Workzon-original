@@ -4,10 +4,9 @@ import {Board,Editable} from "./Components/Board";
 
 
 
-
 function App_todo() {
   const [boards, setBoards] = useState(
-    JSON.parse(localStorage.getItem("prac-kanban")) || []
+    JSON.parse(localStorage.getItem("prac-kanban")) ||[]
   );
 
   const [targetCard, setTargetCard] = useState({
@@ -136,9 +135,9 @@ function App_todo() {
               dragEntered={dragEntered}
               updateCard={updateCard}
             />
-          ))}
-          <div className="app_boards_last">
-            <Editable
+          ))}  
+          {/* <div className="app_boards_last"> 
+             <Editable
               displayClass="app_boards_add-board"
               editClass="app_boards_add-board_edit"
               placeholder="Enter Board Name"
@@ -146,8 +145,8 @@ function App_todo() {
               buttonText="Add Board"
               onSubmit={addboardHandler}
             />
-          </div>
-        </div>
+          </div>  */}
+         </div>
       </div>
     </div>
   );

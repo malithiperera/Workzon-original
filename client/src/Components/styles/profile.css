@@ -12,6 +12,7 @@ form{
   float: left;
   /* padding-right:25%; */
   width: 500px;
+  margin-left: 6%;
 } */
 
 .field{
@@ -35,11 +36,44 @@ input[type="file"] {
 .save{
   width: 300px;
 }
+.chip{
+  background-color: #ffffff;
+  margin-right: 6px;
+}
+.pro-cont{
+  /* padding:2px ; */
+  padding-left: 25px;
+  width: 550px;
+  padding-bottom: 1px;
+  background-color: #e1e6e5;
+}
 
+
+.hr-p{
+
+width: 400px;
+padding-left: 25px;
+margin: 0;
+-webkit-flex-shrink: 0;
+-ms-flex-negative: 0;
+flex-shrink: 0;
+border-width: 0;
+border-style: solid;
+border-color: rgba(0, 0, 0, 0.12);
+border-bottom-width: thin;
+border-color: #dcd6d6;
+opacity: 1;
+margin-top: 12px;
+margin-bottom: 12px;
+}
 .dis{
   line-height: 2.8;
-  padding-top: 5%;
+  padding-top: 8%;
+  float: right;
+  padding-right: 30%;
 }
+
+Card
 .custom-file-upload {
   border-radius: 50%;
   display: inline-block;
@@ -52,6 +86,7 @@ input[type="file"] {
 
 .img-wrap{
   position: relative;
+
   width: 130px;
   height: 130px;
   overflow: hidden;
@@ -60,13 +95,13 @@ input[type="file"] {
  margin-right: 50%;
 }
 .img-upload:before{
-  content: "\f093";
+  /* content: "\f093"; */
   font-size: 90px;
   position: absolute;
   padding-top: 80px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   /* text-align: center; */
   color: #63d3a6;
   width: 200px;
@@ -77,13 +112,12 @@ input[type="file"] {
   background-color: #fff;
  
 }
-.img-upload:hover:before{
- opacity: 1;
-}
+
 img {
   width: auto;
   height: 100%;
 }
+
 
 label{
   text-transform: uppercase;

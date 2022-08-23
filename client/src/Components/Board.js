@@ -2,10 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 // import {CheckSquare, Clock, MoreHorizontal,Calendar,List,Tag,Trash,Type,X, } from "react-feather";
 
 import './styles/board.css';
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 function Board(PropTypes) {
     const [showDropdown, setShowDropdown] = useState(false);
-
+const title =[
+    {
+        title:"Todo"
+    },
+]
     return (
         <div className="board">
             <div className="board_header">
@@ -14,14 +20,17 @@ function Board(PropTypes) {
                     <span>{PropTypes.board?.cards?.length || 0}</span>
                 </p>
                 <div className="board_header_title_more" onClick={() => setShowDropdown(true)}>
-           
+       
             {showDropdown && (
-              <Dropdown
-               class="board_dropdown"
-                onClose={() => setShowDropdown(false)}
+
+              
+              <><Dropdown
+
+                class="board_dropdown"
+
               >
                 <p onClick={() => PropTypes.removeBoard()}>Delete Board</p>
-              </Dropdown>
+              </Dropdown></>
             )}
           </div>
         </div>
@@ -153,10 +162,7 @@ function Board(PropTypes) {
       "#a8193d",
       "#4fcc25",
       "#1ebffa",
-      "#8da377",
-      "#9975bd",
-      "#cf61a1",
-      "#240959",
+     
     ];
   
     const [selectedColor, setSelectedColor] = useState();
@@ -329,9 +335,9 @@ function Board(PropTypes) {
             
               <p>Tasks</p>
             </div>
-            <div className="cardinfo_box_progress-bar">
+            <div >
               <div
-                className="cardinfo_box_progress"
+             
                 style={{
                   width: `${calculatePercent()}%`,
                   backgroundColor: calculatePercent() === 100 ? "limegreen" : "",
@@ -613,3 +619,4 @@ function Create() {
 
 export {Board,Editable};
 
+     

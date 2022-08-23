@@ -14,7 +14,7 @@ import FormLabel from '@mui/material/FormLabel';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
+import './styles/leave.css'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 

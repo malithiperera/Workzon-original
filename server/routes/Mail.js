@@ -19,7 +19,7 @@ const sendRegMail=((req,res,next)=>{
             from:'malithiperera1998@gmail.com',
             to:"malithiperera1998@gmail.com",
             subject:"Registartion Confirmation",
-            html: '<h2>Welome to the WorkZone Community<h2/><p>You requested for email verification, kindly use this <a href="http://localhost:3000/workzone/pages/forgetpassword?token=' + hash + '">link</a> to verify your email address</p>'
+            html: '<h2>Welome to the WorkZone Community<h2/><p>You requested for email verification, kindly use this <a href="http://localhost:3000/workzone/pages/createpassword?token=' + hash + '">link</a> to verify your email address</p>'
         };
          transport.sendMail(mailOptions,function(error,info){
             if(error){
@@ -36,7 +36,7 @@ const sendRegMail=((req,res,next)=>{
 const sendforgetMail=((req,res,next)=>{
     const email=req;
     console.log(email)
-    var token = randtoken.generate(20);
+    bycrypt.hash(req,10).then((hash)=>{
     const transport=nodemailer.createTransport({
         service:'gmail',
         auth:{
@@ -50,7 +50,7 @@ const sendforgetMail=((req,res,next)=>{
         from:'malithiperera1998@gmail.com',
         to:email,
         subject:"Confirmation Link For Forget Passowrd",
-        html: '<p>Your requested for password Change  Link, kindly use this <a href="http://localhost:3000/workzone/pages/forgetpassword">link</a> to Change Your Password</p>'
+        html: '<p>Your requested for password Change  Link, kindly use this <a href="http://localhost:3000/workzone/pages/createpassword?token=' + hash + '">link</a> to Change Your Password</p>'
     };
      transport.sendMail(mailOptions,function(error,info){
         if(error){
@@ -59,6 +59,7 @@ const sendforgetMail=((req,res,next)=>{
         else{
            return next();
         }
+    })
     })
    
   

@@ -64,7 +64,7 @@ const ProfileSection = () => {
         localStorage.removeItem('userid');
         localStorage.removeItem('name');
         localStorage.removeItem('userRole');
-        navigate('/');
+        navigate('/pages/login/login3');
     };
 
     const handleClose = (event) => {

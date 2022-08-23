@@ -44,7 +44,7 @@ import { resolveConfig } from 'prettier';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: '#1E88E5',
+        backgroundColor: '#0C518A',
         color: theme.palette.common.white
     },
     [`&.${tableCellClasses.body}`]: {

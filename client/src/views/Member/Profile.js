@@ -3,12 +3,20 @@ import React,{useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import '../../Components/styles/profile.css'
+
+import Card from '@mui/material/Card';
+
+import Chip from '@mui/material/Chip';
+
+
 const ImgUpload =({
     onChange,
     src
   })=>
   <label htmlFor="photo-upload" className="upload">
+     <h2>EDIT PROFILE</h2><br></br>
   <div className="img-wrap img-upload" >
+   
     <img for="photo-upload" src={src}/>
   </div>
   <input id="photo-upload" type="file" onChange={onChange}/> 
@@ -113,6 +121,7 @@ const Bio =({
       variant="standard"
       onChange={onChange} 
     maxlength="1000" 
+    
     value={value} 
     />
   
@@ -131,47 +140,69 @@ const Bio =({
   })=>
   
     
-       
-       <form className="form-m" onSubmit={onSubmit}>
-   
-      <label >
-        <div className="img-wrap" >
-          <img for="photo-upload" src={src}/>
-        </div>
+ 
+    <form className="form" onSubmit={onSubmit}>
+
+      <label>
+        {/* <div className="img-wrap">
+          <img for="photo-upload" src={src} />
+        </div> */}
       </label>
+      {/* <h2>PROFILE DETAILS</h2><br></br> */}
       <div className="dis">
-      <div className="name">Name : {name}
-     
-        </div>
-        <div className="age">Age : {age}</div>
-        <div className="gender">Gender : {gender}</div>
-        <div className="mobile">Mobile : {mobile}</div>
-        <div className="address">Address : {address}</div>
-        <div className="bio">Bio : {bio}</div>
-        </div>
-      <Button  type="submit" className="save"  variant="contained" size="medium" >
-          Edit profile
-        </Button> 
-        
+        {/* <Card className="pro-cont"> */}
+      < p>Name : Hiruni Guruge </p>
+      <hr class="hr-p" />
+      <p>Age : 29 years </p>
+      <hr class="hr-p" />
+      <p>Gender : female</p>
+      <hr class="hr-p" />
+      <p>Mobile : 0774896332</p>
+      <hr class="hr-p" />
+      <p>Address : No.25,Kandy Road,Kadugannawa</p>
+      <hr class="hr-p" />
+      <p>Mobile : 0774896332</p>
+      <hr class="hr-p" />
+      <p>Bio : I'm professional at .... </p>
+      <hr class="hr-p" />
+      <p>Skils<br></br>
+      <Chip className="chip" label="Javascript"  />
+      <Chip className="chip" label="React" />
+      <Chip  className="chip"label="PHP" />
+      </p>
+      {/* </Card > */}
+       {/* <div className="name">Name : {name}
+
+</div>
+<div className="age">Age : {age}</div>
+<div className="gender">Gender : {gender}</div>
+<div className="mobile">Mobile : {mobile}</div>
+<div className="address">Address : {address}</div>
+<div className="bio">Bio : {bio}</div>  */}
+   </div>
+      {/* <Button  type="submit" className="save"  variant="contained" size="medium" >
+    Edit profile
+  </Button>   */}
+
+
+    </form>
       
-      </form>
-    
-       
-        
   const Edit =({
     onSubmit,
     children,
   })=>
 
-      <form  onSubmit={onSubmit}>
-       
-          {children}
-          <Button  type="submit" className="save"  variant="contained" size="medium" >
-          Save
-        </Button>
+      <form onSubmit={onSubmit}>
 
-      </form>
- 
+      {children}
+      <Button type="submit" className="save" variant="contained" size="medium">
+        Save
+      </Button>
+    
+
+     
+   
+    </form>
   class CardProfile extends React.Component {
     state = {
       file: '',
@@ -238,13 +269,13 @@ const Bio =({
           bio,
         });
       }
-    handleSubmit= e =>{
-      e.preventDefault();
-      let activeP = this.state.active === 'edit' ? 'profile' : 'edit';
-      this.setState({
-        active: activeP,
-      })
-    }
+    // handleSubmit= e =>{
+    //   e.preventDefault();
+    //   let activeP = this.state.active === 'edit' ? 'profile' : 'edit';
+    //   this.setState({
+    //     active: activeP,
+    //   })
+    // }
     
     render() {
       const {imagePreviewUrl, 
@@ -257,7 +288,7 @@ const Bio =({
              active} = this.state;
       return (
         <div>
-        {(active === 'edit')?(
+       
           <Edit onSubmit={this.handleSubmit}>
 
               <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl}/>
@@ -268,7 +299,7 @@ const Bio =({
               <Address onChange={this.editAddress} value={address}/>
               <Bio onChange={this.editBio} value={bio}/>
             </Edit>
-        ):(
+      
             <Profile 
               onSubmit={this.handleSubmit} 
               src={imagePreviewUrl} 
@@ -278,8 +309,7 @@ const Bio =({
               mobile={mobile}
               address={address}
               bio={bio}
-              />)}
-
+              />
         </div>
 
       )
